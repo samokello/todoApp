@@ -14,6 +14,8 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import TrashIcon from 'react-native-vector-icons/FontAwesome';
 import EditIcon from 'react-native-vector-icons/FontAwesome';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
+import ListIcon from "react-native-vector-icons/FontAwesome";
+
 
 const App = () => {
   const [todos, setTodos] = useState([]);
@@ -46,13 +48,13 @@ const App = () => {
 
 
    const handleEdit=()=>{
-       console.log("edit me!")
+      alert("Hey sam,you've clicked the apdate icon")
     }
 
   const renderItem = ({item}) => (
     <View
       style={{
-        backgroundColor: 'violet',
+          backgroundColor:"#fff",
         marginVertical: 10,
         flexDirection: 'row',
         justifyContent: 'space-between',
@@ -73,7 +75,7 @@ const App = () => {
           fillColor="red"
           unfillColor="#FFFFFF"
           text={item.text}
-          iconStyle={{borderColor: 'blue'}}
+          iconStyle={{borderColor: 'green'}}
           textStyle={{
             fontFamily: 'JosefinSans-Regular',
             color: 'red',
@@ -92,7 +94,7 @@ const App = () => {
           <TouchableOpacity
           onPress={() => handleEdit()}
           style={{flexDirection: 'row', alignItems: 'center'}}>
-          <EditIcon size={35} name="edit" style={{color: '#fff'}} />
+          <EditIcon size={35} name="edit" style={{color: 'green',marginRight:10}} />
         </TouchableOpacity>
   
 
@@ -106,16 +108,22 @@ const App = () => {
   );
 
   return (
-    <SafeAreaView style={{backgroundColor: '#4075E9'}}>
+    <SafeAreaView style={{backgroundColor: '#4075E9',borderRadius:10}}>
       <View
         style={{
           backgroundColor: '#E2550A',
           marginVertical: 20,
-          borderRadius: 10,
+          
         }}>
-        <Text style={{textAlign: 'center', color: '#fff', fontSize: 28}}>
+
+<View style={{flexDirection:"row"}}>
+        <Text style={{ color: '#fff', fontSize: 50}}>
+        <ListIcon size={50} name="list" style={{color: 'green',marginRight:30}} />
+
           TODO-LIST
         </Text>
+        </View>
+
       </View>
 
       <View style={styles.textInputView}>
@@ -155,7 +163,7 @@ const styles = StyleSheet.create({
 
   addButton: {
     padding: 10,
-    backgroundColor: 'violet',
+    backgroundColor: 'purple',
     borderRadius: 10,
     width: 50,
   },
@@ -166,12 +174,12 @@ const styles = StyleSheet.create({
 
   textInput: {
     borderWidth: 1,
-    borderColor: '#F6F7F9',
+    borderColor: '#fff',
     width: 300,
     padding: 10,
     marginVertical: 10,
     marginHorizontal: 10,
-    fontSize: 18,
+    fontSize: 20,
     borderRadius: 10,
   },
 });
